@@ -11,7 +11,6 @@ CREATE TABLE tx_stowebphoto_domain_model_photo (
 	place varchar(255) DEFAULT '' NOT NULL,
 	subject text,
 	tags int(11) unsigned DEFAULT '0' NOT NULL,
-	photos int(11) unsigned DEFAULT '0' NOT NULL,
 	comments int(11) unsigned DEFAULT '0' NOT NULL
 
 );
@@ -48,7 +47,8 @@ CREATE TABLE tx_stowebphoto_domain_model_album (
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	shooting_date int(11) DEFAULT '0' NOT NULL,
-	thumbnail int(11) unsigned NOT NULL default '0'
+	thumbnail int(11) unsigned NOT NULL default '0',
+	photos int(11) unsigned DEFAULT '0' NOT NULL
 
 );
 
@@ -67,9 +67,9 @@ CREATE TABLE tx_stowebphoto_photo_tags_mm (
 );
 
 #
-# Table structure for table 'tx_stowebphoto_photo_album_mm'
+# Table structure for table 'tx_stowebphoto_album_photo_mm'
 #
-CREATE TABLE tx_stowebphoto_photo_album_mm (
+CREATE TABLE tx_stowebphoto_album_photo_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

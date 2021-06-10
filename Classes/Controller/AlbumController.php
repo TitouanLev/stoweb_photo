@@ -43,4 +43,13 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('album', $album);
     }
+
+    /**
+     * action search
+     * 
+     * @return void
+     */
+    public function searchAction()
+    {
+    }
 }

@@ -60,20 +60,20 @@ class PhotoController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
 
     /**
-     * action action1
+     * action search
      * 
      * @return void
      */
-    public function action1Action()
+    public function searchAction()
     {
     }
 
     /**
-     * action action2
+     * action cartography
      * 
      * @return void
      */
-    public function action2Action()
+    public function cartographyAction()
     {
     }
 }

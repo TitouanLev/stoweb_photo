@@ -55,6 +55,14 @@ class Album extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $thumbnail = null;
 
     /**
+     * photos
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Photo>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     */
+    protected $photos = null;
+
+    /**
      * Returns the title
      * 
      * @return string $title
@@ -136,5 +144,71 @@ class Album extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setThumbnail(\TYPO3\CMS\Extbase\Domain\Model\FileReference $thumbnail)
     {
         $this->thumbnail = $thumbnail;
+    }
+
+    /**
+     * __construct
+     */
+    public function __construct()
+    {
+
+        //Do not remove the next line: It would break the functionality
+        $this->initStorageObjects();
+    }
+
+    /**
+     * Initializes all ObjectStorage properties
+     * Do not modify this method!
+     * It will be rewritten on each save in the extension builder
+     * You may modify the constructor of this class instead
+     * 
+     * @return void
+     */
+    protected function initStorageObjects()
+    {
+        $this->photos = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+
+    /**
+     * Adds a Photo
+     * 
+     * @param \PhoSTO\StowebPhoto\Domain\Model\Photo $photo
+     * @return void
+     */
+    public function addPhoto(\PhoSTO\StowebPhoto\Domain\Model\Photo $photo)
+    {
+        $this->photos->attach($photo);
+    }
+
+    /**
+     * Removes a Photo
+     * 
+     * @param \PhoSTO\StowebPhoto\Domain\Model\Photo $photoToRemove The Photo to be removed
+     * @return void
+     */
+    public function removePhoto(\PhoSTO\StowebPhoto\Domain\Model\Photo $photoToRemove)
+    {
+        $this->photos->detach($photoToRemove);
+    }
+
+    /**
+     * Returns the photos
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Photo> $photos
+     */
+    public function getPhotos()
+    {
+        return $this->photos;
+    }
+
+    /**
+     * Sets the photos
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Photo> $photos
+     * @return void
+     */
+    public function setPhotos(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $photos)
+    {
+        $this->photos = $photos;
     }
 }

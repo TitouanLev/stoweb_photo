@@ -19,10 +19,10 @@ return [
         'iconfile' => 'EXT:stoweb_photo/Resources/Public/Icons/tx_stowebphoto_domain_model_photo.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, shooting_date, author, place, subject, tags, photos, comments',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, shooting_date, author, place, subject, tags, comments',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, shooting_date, author, place, subject, tags, photos, comments, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, shooting_date, author, place, subject, tags, comments, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -234,32 +234,6 @@ return [
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_stowebphoto_domain_model_tags',
                 'MM' => 'tx_stowebphoto_photo_tags_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
-                'maxitems' => 9999,
-                'multiple' => 0,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => true,
-                    ],
-                ],
-            ],
-            
-        ],
-        'photos' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.photos',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_stowebphoto_domain_model_album',
-                'MM' => 'tx_stowebphoto_photo_album_mm',
                 'size' => 10,
                 'autoSizeMax' => 30,
                 'maxitems' => 9999,

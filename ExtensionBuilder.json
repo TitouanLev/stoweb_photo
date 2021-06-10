@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    623,
-                    31
+                    546,
+                    39
                 ]
             },
             "name": "New Model Object",
@@ -16,8 +16,8 @@
                     "_default3_edit_update": false,
                     "_default4_delete": false,
                     "customActions": [
-                        "action1",
-                        "action2"
+                        "search",
+                        "cartography"
                     ]
                 },
                 "name": "Photo",
@@ -132,17 +132,6 @@
                             "foreignRelationClass": "",
                             "lazyLoading": true,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "Photos",
-                            "relationName": "photos",
-                            "relationType": "manyToMany",
-                            "relationWire": "[wired]",
-                            "renderType": "selectMultipleSideBySide",
-                            "uid": "255579609738"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": true,
-                            "propertyIsExcludeField": true,
                             "relationDescription": "Commentaires",
                             "relationName": "comments",
                             "relationType": "zeroToMany",
@@ -157,8 +146,8 @@
         {
             "config": {
                 "position": [
-                    204,
-                    48
+                    12,
+                    110
                 ]
             },
             "name": "New Model Object",
@@ -241,8 +230,8 @@
         {
             "config": {
                 "position": [
-                    1286,
-                    40
+                    300,
+                    120
                 ]
             },
             "name": "New Model Object",
@@ -303,8 +292,8 @@
         {
             "config": {
                 "position": [
-                    1015,
-                    100
+                    882,
+                    79
                 ]
             },
             "name": "New Model Object",
@@ -315,7 +304,9 @@
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
                     "_default4_delete": false,
-                    "customActions": []
+                    "customActions": [
+                        "search"
+                    ]
                 },
                 "name": "Album",
                 "objectsettings": {
@@ -380,7 +371,19 @@
                     ]
                 },
                 "relationGroup": {
-                    "relations": []
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": true,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "photos",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "renderType": "selectMultipleSideBySide",
+                            "uid": "889289141824"
+                        }
+                    ]
                 }
             }
         }
@@ -436,22 +439,41 @@
                 "role": "Developer"
             }
         ],
-        "plugins": [],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Photos => list,show,search\nComment => list,new,create",
+                    "noncacheableActions": "Photos => search\nComment => create",
+                    "switchableActions": "Liste\nPhoto->list; Photo->show; Photo->search; Comment->list; Comment->new; Comment->create;\nCartographie\nPhoto->cartography;"
+                },
+                "description": "Affichage des photos",
+                "key": "front1",
+                "name": "Photos"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Album =>list,show,search",
+                    "noncacheableActions": "Album => search",
+                    "switchableActions": "Album\nAlbum->list; Album->show; Album->search;"
+                },
+                "description": "Album",
+                "key": "front2",
+                "name": "Album"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Tag =>list,show",
+                    "noncacheableActions": "",
+                    "switchableActions": "Tags\nTag->list; Tag->show;"
+                },
+                "description": "Tags",
+                "key": "front3",
+                "name": "Tags"
+            }
+        ],
         "vendorName": "PhoSTO"
     },
     "wires": [
-        {
-            "src": {
-                "moduleId": 0,
-                "terminal": "relationWire_1",
-                "uid": "255579609738"
-            },
-            "tgt": {
-                "moduleId": 3,
-                "terminal": "SOURCES",
-                "uid": "277957320522"
-            }
-        },
         {
             "src": {
                 "moduleId": 0,
@@ -467,7 +489,7 @@
         {
             "src": {
                 "moduleId": 0,
-                "terminal": "relationWire_2",
+                "terminal": "relationWire_1",
                 "uid": "1410288303639"
             },
             "tgt": {
@@ -475,11 +497,23 @@
                 "terminal": "SOURCES",
                 "uid": "150915366803"
             }
+        },
+        {
+            "src": {
+                "moduleId": 3,
+                "terminal": "relationWire_0",
+                "uid": "889289141824"
+            },
+            "tgt": {
+                "moduleId": 0,
+                "terminal": "SOURCES",
+                "uid": "698511327522"
+            }
         }
     ],
     "storagePath": "C:\/Users\/xurlo\/Documents\/Cours\/CMS\/dawin-typo3-cms-distribution\/web\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2021-06-10 07:53",
+        "last_modified": "2021-06-10 08:17",
         "extension_builder_version": "9.10.3",
         "be_user": " (1)"
     }

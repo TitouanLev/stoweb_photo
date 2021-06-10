@@ -1,0 +1,45 @@
+
+plugin.tx_stowebphoto_front1 {
+    view {
+        # cat=plugin.tx_stowebphoto_front1/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:stoweb_photo/Resources/Private/Templates/
+        # cat=plugin.tx_stowebphoto_front1/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:stoweb_photo/Resources/Private/Partials/
+        # cat=plugin.tx_stowebphoto_front1/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:stoweb_photo/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_stowebphoto_front1//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
+
+plugin.tx_stowebphoto_front2 {
+    view {
+        # cat=plugin.tx_stowebphoto_front2/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:stoweb_photo/Resources/Private/Templates/
+        # cat=plugin.tx_stowebphoto_front2/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:stoweb_photo/Resources/Private/Partials/
+        # cat=plugin.tx_stowebphoto_front2/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:stoweb_photo/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_stowebphoto_front2//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
+
+plugin.tx_stowebphoto_front3 {
+    view {
+        # cat=plugin.tx_stowebphoto_front3/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:stoweb_photo/Resources/Private/Templates/
+        # cat=plugin.tx_stowebphoto_front3/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:stoweb_photo/Resources/Private/Partials/
+        # cat=plugin.tx_stowebphoto_front3/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:stoweb_photo/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_stowebphoto_front3//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

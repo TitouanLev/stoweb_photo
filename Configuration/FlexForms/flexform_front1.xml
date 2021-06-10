@@ -1,0 +1,32 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">Liste</numIndex>
+										<numIndex index="1">Photo-&gt;list;Photo-&gt;show;Photo-&gt;search;Comment-&gt;list;Comment-&gt;new;Comment-&gt;create</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Cartographie</numIndex>
+										<numIndex index="1">Photo-&gt;cartography</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

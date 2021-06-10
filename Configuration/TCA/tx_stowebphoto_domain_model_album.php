@@ -19,10 +19,10 @@ return [
         'iconfile' => 'EXT:stoweb_photo/Resources/Public/Icons/tx_stowebphoto_domain_model_album.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, shooting_date, thumbnail',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, shooting_date, thumbnail, photos',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, shooting_date, thumbnail, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, shooting_date, thumbnail, photos, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -196,6 +196,32 @@ return [
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
+            
+        ],
+        'photos' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_album.photos',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_stowebphoto_domain_model_photo',
+                'MM' => 'tx_stowebphoto_album_photo_mm',
+                'size' => 10,
+                'autoSizeMax' => 30,
+                'maxitems' => 9999,
+                'multiple' => 0,
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                    ],
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                    'listModule' => [
+                        'disabled' => true,
+                    ],
+                ],
+            ],
             
         ],
     
