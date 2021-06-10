@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_tags',
+        'title' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_tag',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,7 +16,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title',
-        'iconfile' => 'EXT:stoweb_photo/Resources/Public/Icons/tx_stowebphoto_domain_model_tags.gif'
+        'iconfile' => 'EXT:stoweb_photo/Resources/Public/Icons/tx_stowebphoto_domain_model_tag.gif'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, color',
@@ -53,8 +53,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_stowebphoto_domain_model_tags',
-                'foreign_table_where' => 'AND {#tx_stowebphoto_domain_model_tags}.{#pid}=###CURRENT_PID### AND {#tx_stowebphoto_domain_model_tags}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_stowebphoto_domain_model_tag',
+                'foreign_table_where' => 'AND {#tx_stowebphoto_domain_model_tag}.{#pid}=###CURRENT_PID### AND {#tx_stowebphoto_domain_model_tag}.{#sys_language_uid} IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -109,7 +109,7 @@ return [
 
         'title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_tags.title',
+            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_tag.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -118,7 +118,7 @@ return [
         ],
         'color' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_tags.color',
+            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_tag.color',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',

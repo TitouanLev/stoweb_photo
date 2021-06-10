@@ -28,7 +28,7 @@ call_user_func(
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'PhoSTO.StowebPhoto',
             'Front3',
-            'Tags'
+            'Tag'
         );
 
         $pluginSignature = str_replace('_', '', 'stoweb_photo') . '_front3';
@@ -43,11 +43,11 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_stowebphoto_domain_model_comment', 'EXT:stoweb_photo/Resources/Private/Language/locallang_csh_tx_stowebphoto_domain_model_comment.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_stowebphoto_domain_model_comment');
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_stowebphoto_domain_model_tags', 'EXT:stoweb_photo/Resources/Private/Language/locallang_csh_tx_stowebphoto_domain_model_tags.xlf');
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_stowebphoto_domain_model_tags');
-
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_stowebphoto_domain_model_album', 'EXT:stoweb_photo/Resources/Private/Language/locallang_csh_tx_stowebphoto_domain_model_album.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_stowebphoto_domain_model_album');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_stowebphoto_domain_model_tag', 'EXT:stoweb_photo/Resources/Private/Language/locallang_csh_tx_stowebphoto_domain_model_tag.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_stowebphoto_domain_model_tag');
 
     }
 );

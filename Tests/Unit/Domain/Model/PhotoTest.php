@@ -208,7 +208,7 @@ class PhotoTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function getTagsReturnsInitialValueForTags()
+    public function getTagsReturnsInitialValueForTag()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         self::assertEquals(
@@ -220,9 +220,9 @@ class PhotoTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function setTagsForObjectStorageContainingTagsSetsTags()
+    public function setTagsForObjectStorageContainingTagSetsTags()
     {
-        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tags();
+        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tag();
         $objectStorageHoldingExactlyOneTags = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneTags->attach($tag);
         $this->subject->setTags($objectStorageHoldingExactlyOneTags);
@@ -239,7 +239,7 @@ class PhotoTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function addTagToObjectStorageHoldingTags()
     {
-        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tags();
+        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tag();
         $tagsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -256,7 +256,7 @@ class PhotoTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function removeTagFromObjectStorageHoldingTags()
     {
-        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tags();
+        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tag();
         $tagsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()

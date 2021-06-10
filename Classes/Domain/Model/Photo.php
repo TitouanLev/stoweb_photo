@@ -78,7 +78,7 @@ class Photo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Tags
      * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Tags>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Tag>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $tags = null;
@@ -264,49 +264,6 @@ class Photo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a Tags
-     * 
-     * @param \PhoSTO\StowebPhoto\Domain\Model\Tags $tag
-     * @return void
-     */
-    public function addTag(\PhoSTO\StowebPhoto\Domain\Model\Tags $tag)
-    {
-        $this->tags->attach($tag);
-    }
-
-    /**
-     * Removes a Tags
-     * 
-     * @param \PhoSTO\StowebPhoto\Domain\Model\Tags $tagToRemove The Tags to be removed
-     * @return void
-     */
-    public function removeTag(\PhoSTO\StowebPhoto\Domain\Model\Tags $tagToRemove)
-    {
-        $this->tags->detach($tagToRemove);
-    }
-
-    /**
-     * Returns the tags
-     * 
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Tags> $tags
-     */
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    /**
-     * Sets the tags
-     * 
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Tags> $tags
-     * @return void
-     */
-    public function setTags(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tags)
-    {
-        $this->tags = $tags;
-    }
-
-    /**
      * Adds a Comment
      * 
      * @param \PhoSTO\StowebPhoto\Domain\Model\Comment $comment
@@ -347,5 +304,48 @@ class Photo extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setComments(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $comments)
     {
         $this->comments = $comments;
+    }
+
+    /**
+     * Adds a Tags
+     * 
+     * @param \PhoSTO\StowebPhoto\Domain\Model\Tag $tag
+     * @return void
+     */
+    public function addTag(\PhoSTO\StowebPhoto\Domain\Model\Tag $tag)
+    {
+        $this->tags->attach($tag);
+    }
+
+    /**
+     * Removes a Tags
+     * 
+     * @param \PhoSTO\StowebPhoto\Domain\Model\Tag $tagToRemove The Tag to be removed
+     * @return void
+     */
+    public function removeTag(\PhoSTO\StowebPhoto\Domain\Model\Tag $tagToRemove)
+    {
+        $this->tags->detach($tagToRemove);
+    }
+
+    /**
+     * Returns the tags
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Tag> tags
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Sets the tags
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\PhoSTO\StowebPhoto\Domain\Model\Tag> $tags
+     * @return void
+     */
+    public function setTags(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tags)
+    {
+        $this->tags = $tags;
     }
 }

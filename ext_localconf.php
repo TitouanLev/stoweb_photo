@@ -9,12 +9,12 @@ call_user_func(
             'PhoSTO.StowebPhoto',
             'Front1',
             [
-                'Photos' => 'list, show, search',
+                'Photo' => 'list, show, search',
                 'Comment' => 'list, new, create'
             ],
             // non-cacheable actions
             [
-                'Photos' => 'search',
+                'Photo' => 'search',
                 'Comment' => 'create'
             ]
         );
@@ -35,14 +35,14 @@ call_user_func(
             'PhoSTO.StowebPhoto',
             'Front3',
             [
-                'Tags' => 'list, show'
+                'Tag' => 'list, show'
             ],
             // non-cacheable actions
             [
                 'Photo' => '',
                 'Comment' => 'create',
-                'Tags' => '',
-                'Album' => ''
+                'Album' => '',
+                'Tag' => ''
             ]
         );
 

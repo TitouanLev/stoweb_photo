@@ -17,24 +17,24 @@ namespace PhoSTO\StowebPhoto\Controller;
  *
  ***/
 /**
- * TagsController
+ * TagController
  */
-class TagsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class TagController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * tagsRepository
+     * tagRepository
      * 
-     * @var \PhoSTO\StowebPhoto\Domain\Repository\TagsRepository
+     * @var \PhoSTO\StowebPhoto\Domain\Repository\TagRepository
      */
-    protected $tagsRepository = null;
+    protected $tagRepository = null;
 
     /**
-     * @param \PhoSTO\StowebPhoto\Domain\Repository\TagsRepository $tagsRepository
+     * @param \PhoSTO\StowebPhoto\Domain\Repository\TagRepository $tagRepository
      */
-    public function injectTagsRepository(\PhoSTO\StowebPhoto\Domain\Repository\TagsRepository $tagsRepository)
+    public function injectTagRepository(\PhoSTO\StowebPhoto\Domain\Repository\TagRepository $tagRepository)
     {
-        $this->tagsRepository = $tagsRepository;
+        $this->tagRepository = $tagRepository;
     }
 
     /**
@@ -44,18 +44,18 @@ class TagsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $tags = $this->tagsRepository->findAll();
+        $tags = $this->tagRepository->findAll();
         $this->view->assign('tags', $tags);
     }
 
     /**
      * action show
      * 
-     * @param \PhoSTO\StowebPhoto\Domain\Model\Tags $tags
+     * @param \PhoSTO\StowebPhoto\Domain\Model\Tag $tag
      * @return void
      */
-    public function showAction(\PhoSTO\StowebPhoto\Domain\Model\Tags $tags)
+    public function showAction(\PhoSTO\StowebPhoto\Domain\Model\Tag $tag)
     {
-        $this->view->assign('tags', $tags);
+        $this->view->assign('tag', $tag);
     }
 }

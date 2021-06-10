@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang" date="2021-06-10T09:49:55Z" product-name="stoweb_photo">
+	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang" date="2021-06-10T12:54:50Z" product-name="stoweb_photo">
 		<header/>
 		<body>
 			<trans-unit id="tx_stowebphoto_domain_model_photo" resname="tx_stowebphoto_domain_model_photo">
@@ -48,15 +48,6 @@
 			<trans-unit id="tx_stowebphoto_domain_model_comment.date" resname="tx_stowebphoto_domain_model_comment.date">
 				<source>Date</source>
 			</trans-unit>
-			<trans-unit id="tx_stowebphoto_domain_model_tags" resname="tx_stowebphoto_domain_model_tags">
-				<source>Tags</source>
-			</trans-unit>
-			<trans-unit id="tx_stowebphoto_domain_model_tags.title" resname="tx_stowebphoto_domain_model_tags.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_stowebphoto_domain_model_tags.color" resname="tx_stowebphoto_domain_model_tags.color">
-				<source>Color</source>
-			</trans-unit>
 			<trans-unit id="tx_stowebphoto_domain_model_album" resname="tx_stowebphoto_domain_model_album">
 				<source>Album</source>
 			</trans-unit>
@@ -74,6 +65,15 @@
 			</trans-unit>
 			<trans-unit id="tx_stowebphoto_domain_model_album.photos" resname="tx_stowebphoto_domain_model_album.photos">
 				<source>Photos</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_tag" resname="tx_stowebphoto_domain_model_tag">
+				<source>Tag</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_tag.title" resname="tx_stowebphoto_domain_model_tag.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_tag.color" resname="tx_stowebphoto_domain_model_tag.color">
+				<source>Color</source>
 			</trans-unit>
 		</body>
 	</file>

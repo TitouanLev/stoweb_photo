@@ -17,13 +17,13 @@ namespace PhoSTO\StowebPhoto\Domain\Model;
  *
  ***/
 /**
- * Tags
+ * Tag
  */
-class Tags extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Tag extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * Titre
+     * Titre du tag
      * 
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
@@ -31,7 +31,7 @@ class Tags extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $title = '';
 
     /**
-     * Couleur
+     * Couleur du tag
      * 
      * @var int
      */

@@ -230,68 +230,6 @@
         {
             "config": {
                 "position": [
-                    300,
-                    120
-                ]
-            },
-            "name": "New Model Object",
-            "value": {
-                "actionGroup": {
-                    "_default0_list": true,
-                    "_default1_show": true,
-                    "_default2_new_create": false,
-                    "_default3_edit_update": false,
-                    "_default4_delete": false,
-                    "customActions": []
-                },
-                "name": "Tags",
-                "objectsettings": {
-                    "addDeletedField": true,
-                    "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": false,
-                    "categorizable": false,
-                    "description": "",
-                    "mapToTable": "",
-                    "parentClass": "",
-                    "sorting": false,
-                    "type": "Entity",
-                    "uid": "1475902840868"
-                },
-                "propertyGroup": {
-                    "properties": [
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "Titre",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": true,
-                            "propertyName": "title",
-                            "propertyType": "String",
-                            "uid": "1174820896506"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "Couleur",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": false,
-                            "propertyName": "color",
-                            "propertyType": "Select",
-                            "uid": "779748482720"
-                        }
-                    ]
-                },
-                "relationGroup": {
-                    "relations": []
-                }
-            }
-        },
-        {
-            "config": {
-                "position": [
                     882,
                     79
                 ]
@@ -386,6 +324,68 @@
                     ]
                 }
             }
+        },
+        {
+            "config": {
+                "position": [
+                    274,
+                    123
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Tag",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Tag",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1098174170773"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Titre du tag",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "804693520792"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Couleur du tag",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "color",
+                            "propertyType": "Select",
+                            "uid": "985309735569"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
         }
     ],
     "properties": {
@@ -442,8 +442,8 @@
         "plugins": [
             {
                 "actions": {
-                    "controllerActionCombinations": "Photos => list,show,search\nComment => list,new,create",
-                    "noncacheableActions": "Photos => search\nComment => create",
+                    "controllerActionCombinations": "Photo => list,show,search\nComment => list,new,create",
+                    "noncacheableActions": "Photo => search\nComment => create",
                     "switchableActions": "Liste\nPhoto->list; Photo->show; Photo->search; Comment->list; Comment->new; Comment->create;\nCartographie\nPhoto->cartography;"
                 },
                 "description": "Affichage des photos",
@@ -462,30 +462,18 @@
             },
             {
                 "actions": {
-                    "controllerActionCombinations": "Tags =>list,show",
+                    "controllerActionCombinations": "Tag =>list,show",
                     "noncacheableActions": "",
-                    "switchableActions": "Tags\nTags->list; Tags->show;"
+                    "switchableActions": "Tag\nTag->list; Tag->show;"
                 },
-                "description": "Tags",
+                "description": "Tag",
                 "key": "front3",
-                "name": "Tags"
+                "name": "Tag"
             }
         ],
         "vendorName": "PhoSTO"
     },
     "wires": [
-        {
-            "src": {
-                "moduleId": 0,
-                "terminal": "relationWire_0",
-                "uid": "1099285386543"
-            },
-            "tgt": {
-                "moduleId": 2,
-                "terminal": "SOURCES",
-                "uid": "1475902840868"
-            }
-        },
         {
             "src": {
                 "moduleId": 0,
@@ -500,7 +488,7 @@
         },
         {
             "src": {
-                "moduleId": 3,
+                "moduleId": 2,
                 "terminal": "relationWire_0",
                 "uid": "889289141824"
             },
@@ -509,11 +497,23 @@
                 "terminal": "SOURCES",
                 "uid": "698511327522"
             }
+        },
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "1099285386543"
+            },
+            "tgt": {
+                "moduleId": 3,
+                "terminal": "SOURCES",
+                "uid": "1098174170773"
+            }
         }
     ],
     "storagePath": "C:\/Users\/xurlo\/Documents\/Cours\/CMS\/dawin-typo3-cms-distribution\/web\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2021-06-10 09:49",
+        "last_modified": "2021-06-10 12:54",
         "extension_builder_version": "9.10.3",
         "be_user": " (1)"
     }

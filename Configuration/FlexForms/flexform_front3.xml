@@ -14,8 +14,8 @@
 								<type>select</type>
 								<items>
 									<numIndex index="0">
-										<numIndex index="0">Tags</numIndex>
-										<numIndex index="1">Tags-&gt;list;Tags-&gt;show</numIndex>
+										<numIndex index="0">Tag</numIndex>
+										<numIndex index="1">Tag-&gt;list;Tag-&gt;show</numIndex>
 									</numIndex>
 								</items>
 							</config>

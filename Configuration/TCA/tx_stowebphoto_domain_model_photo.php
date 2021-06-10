@@ -232,7 +232,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_stowebphoto_domain_model_tags',
+                'foreign_table' => 'tx_stowebphoto_domain_model_tag',
                 'MM' => 'tx_stowebphoto_photo_tags_mm',
                 'size' => 10,
                 'autoSizeMax' => 30,

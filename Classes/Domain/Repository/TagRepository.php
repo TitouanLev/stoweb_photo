@@ -19,6 +19,6 @@ namespace PhoSTO\StowebPhoto\Domain\Repository;
 /**
  * The repository for Tags
  */
-class TagsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class TagRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 }
