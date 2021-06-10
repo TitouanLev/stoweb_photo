@@ -23,6 +23,21 @@ class TagsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
+     * tagsRepository
+     * 
+     * @var \PhoSTO\StowebPhoto\Domain\Repository\TagsRepository
+     */
+    protected $tagsRepository = null;
+
+    /**
+     * @param \PhoSTO\StowebPhoto\Domain\Repository\TagsRepository $tagsRepository
+     */
+    public function injectTagsRepository(\PhoSTO\StowebPhoto\Domain\Repository\TagsRepository $tagsRepository)
+    {
+        $this->tagsRepository = $tagsRepository;
+    }
+
+    /**
      * action list
      * 
      * @return void

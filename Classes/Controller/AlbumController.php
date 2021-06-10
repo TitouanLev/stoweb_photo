@@ -23,6 +23,21 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
+     * albumRepository
+     * 
+     * @var \PhoSTO\StowebPhoto\Domain\Repository\AlbumRepository
+     */
+    protected $albumRepository = null;
+
+    /**
+     * @param \PhoSTO\StowebPhoto\Domain\Repository\AlbumRepository $albumRepository
+     */
+    public function injectAlbumRepository(\PhoSTO\StowebPhoto\Domain\Repository\AlbumRepository $albumRepository)
+    {
+        $this->albumRepository = $albumRepository;
+    }
+
+    /**
      * action list
      * 
      * @return void

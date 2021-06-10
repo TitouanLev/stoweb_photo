@@ -462,9 +462,9 @@
             },
             {
                 "actions": {
-                    "controllerActionCombinations": "Tag =>list,show",
+                    "controllerActionCombinations": "Tags =>list,show",
                     "noncacheableActions": "",
-                    "switchableActions": "Tags\nTag->list; Tag->show;"
+                    "switchableActions": "Tags\nTags->list; Tags->show;"
                 },
                 "description": "Tags",
                 "key": "front3",
@@ -513,7 +513,7 @@
     ],
     "storagePath": "C:\/Users\/xurlo\/Documents\/Cours\/CMS\/dawin-typo3-cms-distribution\/web\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2021-06-10 08:17",
+        "last_modified": "2021-06-10 09:49",
         "extension_builder_version": "9.10.3",
         "be_user": " (1)"
     }

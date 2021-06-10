@@ -35,7 +35,7 @@ call_user_func(
             'PhoSTO.StowebPhoto',
             'Front3',
             [
-                'Tag' => 'list, show'
+                'Tags' => 'list, show'
             ],
             // non-cacheable actions
             [

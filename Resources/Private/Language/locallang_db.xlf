@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang_db" date="2021-06-10T08:17:55Z" product-name="stoweb_photo">
+	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang_db" date="2021-06-10T09:49:55Z" product-name="stoweb_photo">
 		<header/>
 		<body>
 			<trans-unit id="tx_stowebphoto_domain_model_photo" resname="tx_stowebphoto_domain_model_photo">
