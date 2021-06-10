@@ -1,0 +1,185 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    508,
+                    -31
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "action1",
+                        "action2"
+                    ]
+                },
+                "name": "Photo",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Photo jolie",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "698511327522"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Titre",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "912600241954"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Description",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "RichText",
+                            "uid": "100591502798"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Photo file",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "file",
+                            "propertyType": "Image",
+                            "uid": "74979421968"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Date",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "shootingDate",
+                            "propertyType": "Date",
+                            "uid": "720437806101"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Auteur",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "author",
+                            "propertyType": "String",
+                            "uid": "267593676996"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Lieu",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "place",
+                            "propertyType": "String",
+                            "uid": "1099339896217"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Sujet",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "subject",
+                            "propertyType": "Text",
+                            "uid": "1433005974209"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "Projet photot\u00e8que DAWIN 20-21 de l'\u00e9quipe STOWeb",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": true,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "stoweb_photo",
+        "name": "PhoSTO",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "STOWeb",
+                "email": "lev.titouan@gmail.com",
+                "name": "Titouan LEVET",
+                "role": "Developer"
+            },
+            {
+                "company": "STOWeb",
+                "email": "mat.cathelineau@gmail.com",
+                "name": "Matthias CATHELINEAU",
+                "role": "Developer"
+            },
+            {
+                "company": "STOWeb",
+                "email": "frederic.allegret@hotmail.fr",
+                "name": "Fr\u00e9d\u00e9ric ALLEGRET",
+                "role": "Developer"
+            },
+            {
+                "company": "STOWeb",
+                "email": "lafferayrie.val@gmail.com",
+                "name": "Valerian LAFFERAYRIE",
+                "role": "Developer"
+            },
+            {
+                "company": "STOWeb",
+                "email": "thomas.chabrol3@gmail.com",
+                "name": "Thomas CHABROL",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "PhoSTO"
+    },
+    "wires": [],
+    "storagePath": "C:\/Users\/xurlo\/Documents\/Cours\/CMS\/dawin-typo3-cms-distribution\/web\/typo3conf\/ext\/",
+    "log": {
+        "last_modified": "2021-05-17 04:01",
+        "extension_builder_version": "9.10.3",
+        "be_user": " (1)"
+    }
+}

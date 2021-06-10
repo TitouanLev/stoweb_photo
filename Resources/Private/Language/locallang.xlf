@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang" date="2021-05-17T16:01:15Z" product-name="stoweb_photo">
+		<header/>
+		<body>
+			<trans-unit id="tx_stowebphoto_domain_model_photo" resname="tx_stowebphoto_domain_model_photo">
+				<source>Photo</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.title" resname="tx_stowebphoto_domain_model_photo.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.description" resname="tx_stowebphoto_domain_model_photo.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.file" resname="tx_stowebphoto_domain_model_photo.file">
+				<source>File</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.shooting_date" resname="tx_stowebphoto_domain_model_photo.shooting_date">
+				<source>Shooting Date</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.author" resname="tx_stowebphoto_domain_model_photo.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.place" resname="tx_stowebphoto_domain_model_photo.place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.subject" resname="tx_stowebphoto_domain_model_photo.subject">
+				<source>Subject</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

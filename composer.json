@@ -1,0 +1,27 @@
+{
+    "name": "pho-s-t-o/stoweb-photo",
+    "type": "typo3-cms-extension",
+    "description": "Projet photot\u00e8que DAWIN 20-21 de l'\u00e9quipe STOWeb",
+    "authors": [
+        {
+            "name": "Titouan LEVET",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhoSTO\\StowebPhoto\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhoSTO\\StowebPhoto\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "typo3-ter/stoweb-photo": "self.version"
+    }
+}
