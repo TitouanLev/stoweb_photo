@@ -204,4 +204,193 @@ class PhotoTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
             $this->subject
         );
     }
+
+    /**
+     * @test
+     */
+    public function getTagsReturnsInitialValueForTags()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getTags()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setTagsForObjectStorageContainingTagsSetsTags()
+    {
+        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tags();
+        $objectStorageHoldingExactlyOneTags = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneTags->attach($tag);
+        $this->subject->setTags($objectStorageHoldingExactlyOneTags);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneTags,
+            'tags',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addTagToObjectStorageHoldingTags()
+    {
+        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tags();
+        $tagsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $tagsObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($tag));
+        $this->inject($this->subject, 'tags', $tagsObjectStorageMock);
+
+        $this->subject->addTag($tag);
+    }
+
+    /**
+     * @test
+     */
+    public function removeTagFromObjectStorageHoldingTags()
+    {
+        $tag = new \PhoSTO\StowebPhoto\Domain\Model\Tags();
+        $tagsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $tagsObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($tag));
+        $this->inject($this->subject, 'tags', $tagsObjectStorageMock);
+
+        $this->subject->removeTag($tag);
+    }
+
+    /**
+     * @test
+     */
+    public function getPhotosReturnsInitialValueForAlbum()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getPhotos()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setPhotosForObjectStorageContainingAlbumSetsPhotos()
+    {
+        $photo = new \PhoSTO\StowebPhoto\Domain\Model\Album();
+        $objectStorageHoldingExactlyOnePhotos = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOnePhotos->attach($photo);
+        $this->subject->setPhotos($objectStorageHoldingExactlyOnePhotos);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOnePhotos,
+            'photos',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addPhotoToObjectStorageHoldingPhotos()
+    {
+        $photo = new \PhoSTO\StowebPhoto\Domain\Model\Album();
+        $photosObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $photosObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($photo));
+        $this->inject($this->subject, 'photos', $photosObjectStorageMock);
+
+        $this->subject->addPhoto($photo);
+    }
+
+    /**
+     * @test
+     */
+    public function removePhotoFromObjectStorageHoldingPhotos()
+    {
+        $photo = new \PhoSTO\StowebPhoto\Domain\Model\Album();
+        $photosObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $photosObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($photo));
+        $this->inject($this->subject, 'photos', $photosObjectStorageMock);
+
+        $this->subject->removePhoto($photo);
+    }
+
+    /**
+     * @test
+     */
+    public function getCommentsReturnsInitialValueForComment()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getComments()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setCommentsForObjectStorageContainingCommentSetsComments()
+    {
+        $comment = new \PhoSTO\StowebPhoto\Domain\Model\Comment();
+        $objectStorageHoldingExactlyOneComments = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneComments->attach($comment);
+        $this->subject->setComments($objectStorageHoldingExactlyOneComments);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneComments,
+            'comments',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addCommentToObjectStorageHoldingComments()
+    {
+        $comment = new \PhoSTO\StowebPhoto\Domain\Model\Comment();
+        $commentsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $commentsObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($comment));
+        $this->inject($this->subject, 'comments', $commentsObjectStorageMock);
+
+        $this->subject->addComment($comment);
+    }
+
+    /**
+     * @test
+     */
+    public function removeCommentFromObjectStorageHoldingComments()
+    {
+        $comment = new \PhoSTO\StowebPhoto\Domain\Model\Comment();
+        $commentsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $commentsObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($comment));
+        $this->inject($this->subject, 'comments', $commentsObjectStorageMock);
+
+        $this->subject->removeComment($comment);
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo',
+        'title' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_album',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -15,14 +15,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,description,author,place,subject',
-        'iconfile' => 'EXT:stoweb_photo/Resources/Public/Icons/tx_stowebphoto_domain_model_photo.gif'
+        'searchFields' => 'title,description',
+        'iconfile' => 'EXT:stoweb_photo/Resources/Public/Icons/tx_stowebphoto_domain_model_album.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, shooting_date, author, place, subject, tags, photos, comments',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, shooting_date, thumbnail',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, shooting_date, author, place, subject, tags, photos, comments, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, shooting_date, thumbnail, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -53,8 +53,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_stowebphoto_domain_model_photo',
-                'foreign_table_where' => 'AND {#tx_stowebphoto_domain_model_photo}.{#pid}=###CURRENT_PID### AND {#tx_stowebphoto_domain_model_photo}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_stowebphoto_domain_model_album',
+                'foreign_table_where' => 'AND {#tx_stowebphoto_domain_model_album}.{#pid}=###CURRENT_PID### AND {#tx_stowebphoto_domain_model_album}.{#sys_language_uid} IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -109,7 +109,7 @@ return [
 
         'title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.title',
+            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_album.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -118,7 +118,7 @@ return [
         ],
         'description' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.description',
+            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_album.description',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -130,15 +130,26 @@ return [
                 ],
                 'cols' => 40,
                 'rows' => 15,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
             ],
             
         ],
-        'file' => [
+        'shooting_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.file',
+            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_album.shooting_date',
+            'config' => [
+                'type' => 'input',
+                'renderType' => 'inputDateTime',
+                'size' => 7,
+                'eval' => 'date',
+                'default' => time()
+            ],
+        ],
+        'thumbnail' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_album.thumbnail',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'file',
+                'thumbnail',
                 [
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
@@ -176,8 +187,8 @@ return [
                         ]
                     ],
                     'foreign_match_fields' => [
-                        'fieldname' => 'file',
-                        'tablenames' => 'tx_stowebphoto_domain_model_photo',
+                        'fieldname' => 'thumbnail',
+                        'tablenames' => 'tx_stowebphoto_domain_model_album',
                         'table_local' => 'sys_file',
                     ],
                     'maxitems' => 1,
@@ -186,115 +197,6 @@ return [
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
             
-        ],
-        'shooting_date' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.shooting_date',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 7,
-                'eval' => 'date,required',
-                'default' => time()
-            ],
-        ],
-        'author' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.author',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ],
-        ],
-        'place' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.place',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ],
-        ],
-        'subject' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.subject',
-            'config' => [
-                'type' => 'text',
-                'cols' => 40,
-                'rows' => 15,
-                'eval' => 'trim'
-            ]
-        ],
-        'tags' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.tags',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_stowebphoto_domain_model_tags',
-                'MM' => 'tx_stowebphoto_photo_tags_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
-                'maxitems' => 9999,
-                'multiple' => 0,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => true,
-                    ],
-                ],
-            ],
-            
-        ],
-        'photos' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.photos',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_stowebphoto_domain_model_album',
-                'MM' => 'tx_stowebphoto_photo_album_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
-                'maxitems' => 9999,
-                'multiple' => 0,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => true,
-                    ],
-                ],
-            ],
-            
-        ],
-        'comments' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:stoweb_photo/Resources/Private/Language/locallang_db.xlf:tx_stowebphoto_domain_model_photo.comments',
-            'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_stowebphoto_domain_model_comment',
-                'foreign_field' => 'photo',
-                'maxitems' => 9999,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
-            ],
-
         ],
     
     ],

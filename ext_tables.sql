@@ -9,6 +9,73 @@ CREATE TABLE tx_stowebphoto_domain_model_photo (
 	shooting_date int(11) DEFAULT '0' NOT NULL,
 	author varchar(255) DEFAULT '' NOT NULL,
 	place varchar(255) DEFAULT '' NOT NULL,
-	subject text
+	subject text,
+	tags int(11) unsigned DEFAULT '0' NOT NULL,
+	photos int(11) unsigned DEFAULT '0' NOT NULL,
+	comments int(11) unsigned DEFAULT '0' NOT NULL
 
+);
+
+#
+# Table structure for table 'tx_stowebphoto_domain_model_comment'
+#
+CREATE TABLE tx_stowebphoto_domain_model_comment (
+
+	photo int(11) unsigned DEFAULT '0' NOT NULL,
+
+	author varchar(255) DEFAULT '' NOT NULL,
+	content text,
+	mark int(11) DEFAULT '0' NOT NULL,
+	date int(11) DEFAULT '0' NOT NULL
+
+);
+
+#
+# Table structure for table 'tx_stowebphoto_domain_model_tags'
+#
+CREATE TABLE tx_stowebphoto_domain_model_tags (
+
+	title varchar(255) DEFAULT '' NOT NULL,
+	color int(11) DEFAULT '0' NOT NULL
+
+);
+
+#
+# Table structure for table 'tx_stowebphoto_domain_model_album'
+#
+CREATE TABLE tx_stowebphoto_domain_model_album (
+
+	title varchar(255) DEFAULT '' NOT NULL,
+	description text,
+	shooting_date int(11) DEFAULT '0' NOT NULL,
+	thumbnail int(11) unsigned NOT NULL default '0'
+
+);
+
+#
+# Table structure for table 'tx_stowebphoto_photo_tags_mm'
+#
+CREATE TABLE tx_stowebphoto_photo_tags_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid_local,uid_foreign),
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_stowebphoto_photo_album_mm'
+#
+CREATE TABLE tx_stowebphoto_photo_album_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid_local,uid_foreign),
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
 );

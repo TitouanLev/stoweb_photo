@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang_db" date="2021-05-17T16:01:15Z" product-name="stoweb_photo">
+	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang_db" date="2021-06-10T07:53:40Z" product-name="stoweb_photo">
 		<header/>
 		<body>
 			<trans-unit id="tx_stowebphoto_domain_model_photo" resname="tx_stowebphoto_domain_model_photo">
@@ -26,6 +26,54 @@
 			</trans-unit>
 			<trans-unit id="tx_stowebphoto_domain_model_photo.subject" resname="tx_stowebphoto_domain_model_photo.subject">
 				<source>Subject</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.tags" resname="tx_stowebphoto_domain_model_photo.tags">
+				<source>Tags</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.photos" resname="tx_stowebphoto_domain_model_photo.photos">
+				<source>Photos</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_photo.comments" resname="tx_stowebphoto_domain_model_photo.comments">
+				<source>Comments</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_comment" resname="tx_stowebphoto_domain_model_comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_comment.author" resname="tx_stowebphoto_domain_model_comment.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_comment.content" resname="tx_stowebphoto_domain_model_comment.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_comment.mark" resname="tx_stowebphoto_domain_model_comment.mark">
+				<source>Mark</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_comment.date" resname="tx_stowebphoto_domain_model_comment.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_tags" resname="tx_stowebphoto_domain_model_tags">
+				<source>Tags</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_tags.title" resname="tx_stowebphoto_domain_model_tags.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_tags.color" resname="tx_stowebphoto_domain_model_tags.color">
+				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_album" resname="tx_stowebphoto_domain_model_album">
+				<source>Album</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_album.title" resname="tx_stowebphoto_domain_model_album.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_album.description" resname="tx_stowebphoto_domain_model_album.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_album.shooting_date" resname="tx_stowebphoto_domain_model_album.shooting_date">
+				<source>Shooting Date</source>
+			</trans-unit>
+			<trans-unit id="tx_stowebphoto_domain_model_album.thumbnail" resname="tx_stowebphoto_domain_model_album.thumbnail">
+				<source>Thumbnail</source>
 			</trans-unit>
 		</body>
 	</file>

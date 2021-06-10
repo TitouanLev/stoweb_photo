@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:stoweb_photo/Resources/Private/Language/locallang_csh" date="2021-06-10T07:53:40Z" product-name="stoweb_photo">
+		<header/>
+		<body>
+			<trans-unit id="author.description" resname="author.description">
+				<source>Nom de l&#039;auteur</source>
+			</trans-unit>
+			<trans-unit id="content.description" resname="content.description">
+				<source>Contenu</source>
+			</trans-unit>
+			<trans-unit id="mark.description" resname="mark.description">
+				<source>Note (0-5)</source>
+			</trans-unit>
+			<trans-unit id="date.description" resname="date.description">
+				<source>Date de creation</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
