@@ -3,10 +3,23 @@
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Single View for Photo</h1>
+    <div class="text-center">
+        <h1>{photo.title}</h1>
 
-    <f:flashMessages />
-    <f:render partial="Photo/Properties" arguments="{photo:photo}" />
+        <div>
+            <f:image image="{photo.file}" style="width: 40rem; height: 40rem" />
+        </div>
+
+        <p>
+            <f:translate key="tx_stowebphoto_domain_model_photo.description" /> : {photo.description}</p>
+        <p>
+            <f:translate key="tx_stowebphoto_domain_model_photo.shooting_date" /> : {photo.shootingDate -> f:format.date()}</p>
+        <p>
+            <f:translate key="tx_stowebphoto_domain_model_photo.author" /> : {photo.author}</p>
+        <p>
+            <f:translate key="tx_stowebphoto_domain_model_photo.place" /> : {photo.place}</p>
+    </div>
+
     <f:link.action action="list">Back to list</f:link.action><br />
 </f:section>
 

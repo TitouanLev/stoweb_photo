@@ -63,9 +63,9 @@ your changes will be overwritten the next time you save the extension in the ext
             </tr>
         </f:for>
     </table>-->
-    <div class="d-flex">
+    <div class="row">
         <f:for each="{photos}" as="photo">
-            <div class="m-2">
+            <div class="m-2 text-center">
                 <p>
                     <f:link.action action="show" arguments="{photo : photo}">{photo.title}</f:link.action>
                 </p>
