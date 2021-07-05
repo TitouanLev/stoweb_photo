@@ -3,28 +3,44 @@
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <div class="text-center">
-        <h1>{photo.title}</h1>
+    <h1 class="text-center">{photo.title}</h1>
 
-        <div>
+    <div class="row text-center mt-4">
+
+        <div class="col-8">
             <f:image image="{photo.file}" style="width: 40rem; height: 40rem" />
         </div>
 
-        <p>
-            <f:translate key="tx_stowebphoto_domain_model_photo.description" /> : {photo.description}</p>
-        <p>
-            <f:translate key="tx_stowebphoto_domain_model_photo.shooting_date" /> : {photo.shootingDate -> f:format.date()}</p>
-        <p>
-            <f:translate key="tx_stowebphoto_domain_model_photo.author" /> : {photo.author}</p>
-        <p>
-            <f:translate key="tx_stowebphoto_domain_model_photo.place" /> : {photo.place}</p>
+        <div class="col-4 my-auto" style="border:1px solid black; border-radius: 5px 5px">
+            <p>
+                <f:translate key="tx_stowebphoto_domain_model_photo.description" /> : {photo.description}</p>
+            <p>
+                <f:translate key="tx_stowebphoto_domain_model_photo.shooting_date" /> : {photo.shootingDate -> f:format.date()}</p>
+            <p>
+                <f:translate key="tx_stowebphoto_domain_model_photo.author" /> : {photo.author}</p>
+            <p>
+                <f:translate key="tx_stowebphoto_domain_model_photo.place" /> : {photo.place}</p>
+
+            <f:for each="{photo.tags}" as="tag">
+                <div>
+                    <button type="button" class="btn btn-light"><f:link.action controller="Tag" action="show" pageUid="{settings.detailsPhotoPageId}" arguments="{tag : tag}">{tag.title}</f:link.action></button>
+                </div>
+            </f:for>
+        </div>
     </div>
 
-    <f:for each="{photo.tags}" as="tag">
-        <div class="col-3">
-            <button type="button" class="btn btn-light"><f:link.action controller="Tag" action="show" pageUid="{settings.detailsPhotoPageId}" arguments="{tag : tag}">{tag.title}</f:link.action></button>
-        </div>
-    </f:for>
+    <div class="col-6 mt-4" style="border:1px solid black; border-radius: 5px 5px">
+        <f:for each="{photo.comments}" as="comment">
+            <div>
+                <p class="card-title">{comment.author},
+                    <f:format.date format="d.m.Y">{comment.date}</f:format.date>
+                </p>
+                <p class="card-title">{comment.content}</p>
+                <p class="card-title">{comment.mark}</p>
+            </div>
+            <hr>
+        </f:for>
+    </div>
 
     <f:link.action action="list">Back to list</f:link.action><br />
 </f:section>
