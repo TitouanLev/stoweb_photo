@@ -20,6 +20,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
             <f:translate key="tx_stowebphoto_domain_model_photo.place" /> : {photo.place}</p>
     </div>
 
+    <f:for each="{photo.tags}" as="tag">
+        <div class="col-3">
+            <button type="button" class="btn btn-light"><f:link.action controller="Tag" action="show" pageUid="{settings.detailsPhotoPageId}" arguments="{tag : tag}">{tag.title}</f:link.action></button>
+        </div>
+    </f:for>
+
     <f:link.action action="list">Back to list</f:link.action><br />
 </f:section>
 

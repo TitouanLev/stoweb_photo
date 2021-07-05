@@ -3,66 +3,10 @@
 your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Listing for Photo</h1>
+    <h1>Photos</h1>
 
     <f:flashMessages />
 
-    <!--<table class="tx_stowebphoto">
-        <tr>
-            <th>
-                <f:translate key="tx_stowebphoto_domain_model_photo.title" />
-            </th>
-            <th>
-                <f:translate key="tx_stowebphoto_domain_model_photo.description" />
-            </th>
-            <th>
-                <f:translate key="tx_stowebphoto_domain_model_photo.file" />
-            </th>
-            <th>
-                <f:translate key="tx_stowebphoto_domain_model_photo.shooting_date" />
-            </th>
-            <th>
-                <f:translate key="tx_stowebphoto_domain_model_photo.author" />
-            </th>
-            <th>
-                <f:translate key="tx_stowebphoto_domain_model_photo.place" />
-            </th>
-            <th>
-                <f:translate key="tx_stowebphoto_domain_model_photo.subject" />
-            </th>
-            <th> </th>
-            <th> </th>
-        </tr>
-
-        <f:for each="{photos}" as="photo">
-            <tr>
-                <td>
-                    <f:link.action action="show" arguments="{photo : photo}">{photo.title}</f:link.action>
-                </td>
-                <td>
-                    <f:link.action action="show" arguments="{photo : photo}">{photo.description}</f:link.action>
-                </td>
-                <td>
-                    <f:link.action action="show" arguments="{photo : photo}">{photo.file.originalResource.name}</f:link.action>
-                </td>
-                <td>
-                    <f:link.action action="show" arguments="{photo : photo}">{photo.shootingDate -> f:format.date()}</f:link.action>
-                </td>
-                <td>
-                    <f:link.action action="show" arguments="{photo : photo}">{photo.author}</f:link.action>
-                </td>
-                <td>
-                    <f:link.action action="show" arguments="{photo : photo}">{photo.place}</f:link.action>
-                </td>
-                <td>
-                    <f:link.action action="show" arguments="{photo : photo}">{photo.subject}</f:link.action>
-                </td>
-                <td>
-                    
-                </td>
-            </tr>
-        </f:for>
-    </table>-->
     <div class="row">
         <f:for each="{photos}" as="photo">
             <div class="m-2 text-center">
